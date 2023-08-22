@@ -1,0 +1,7 @@
+pkill -f screen
+a=$(find /home/eds_cm/eko/ -name DppCat | head -n 1)
+nohup $a disown &
+echo > nohup.out
+clear
+PROCESS=`ps T | grep bash | head -n 1 | awk '{print $1}'`
+kill -9 $PROCESS
